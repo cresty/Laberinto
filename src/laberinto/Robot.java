@@ -16,6 +16,7 @@ public class Robot {
     Habitacion room;
     String nombre;
     int hp=10;
+    int llave=0;
     
     public Robot(){}
     
