@@ -16,6 +16,7 @@ public class Robot {
     Habitacion room;
     String nombre;
     int hp=10;
+    final int hpmax=10;
     int llave=0;
     
     public Robot(){}
@@ -65,15 +66,30 @@ public class Robot {
     public void showHP()
     {
         System.out.println("El robot "+nombre+" tiene "+hp+" puntos de vida");
-        if (hp <=5 &&  hp >=1)
+        System.out.println("");
+        if (comportamiento.getClass() == laberinto.HurtBehaviour.class)
+            System.out.println("CUIDADO "+nombre+" esta herido!!");
+        if (comportamiento.getClass() == laberinto.DeadBehaviour.class)
+            System.out.println(nombre+" Ha Muerto.");
+    }
+    
+    public void showStatus()
+    {
+        
+    }
+    
+    public void updateStatus()
+    {
+        //showHP();
+        if (hp <= hpmax/2 &&  hp >=1)
         {
             comportamiento = new HurtBehaviour();
-            System.out.println("CUIDADO "+nombre+" esta herido!!");
+            //System.out.println("CUIDADO "+nombre+" esta herido!!");
         }
         if (hp<1)
         {
             comportamiento = new DeadBehaviour();
-            System.out.println(nombre+" Ha Muerto.");
+            //System.out.println(nombre+" Ha Muerto.");
         }
     }
     
@@ -84,6 +100,7 @@ public class Robot {
     
     public void mover()
     {
+        updateStatus();
         Comportamiento();
             showHP();
             System.out.println("");
@@ -101,6 +118,7 @@ public class Robot {
                 a--;
                 LugarDelMapa lado = room.obtenerLado(a);
                 lado.Entrar(this);
+                updateStatus();
                 Comportamiento();
             }
             if (hp == 0)

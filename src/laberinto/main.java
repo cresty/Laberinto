@@ -18,11 +18,13 @@ public class main {
         Robot r2 = new Robot("DarKWolF", lab.getInicial());
         while(true)
         {
-            System.out.println("Turno de: "+r1.nombre);
+            if (r1.comportamiento.getClass() != laberinto.DeadBehaviour.class)
+                System.out.println("Turno de: "+r1.nombre);
             r1.Comportamiento();
             for (int i=0;i<r1.comportamiento.getTurnos();i++)
                 r1.mover();
-            System.out.println("Turno de: "+r2.nombre);
+            if (r2.comportamiento.getClass() != laberinto.DeadBehaviour.class)
+                System.out.println("Turno de: "+r2.nombre);
             r2.Comportamiento();
             for (int i=0;i<r2.comportamiento.getTurnos();i++)
                 r2.mover();

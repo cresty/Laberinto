@@ -12,10 +12,12 @@ public class Habitacion implements LugarDelMapa
 {
     public static final int NUMLADOS = 4;
     private int numeroHabitacion;
+    boolean winRoom;
     private final LugarDelMapa lados[] = new LugarDelMapa[NUMLADOS];
-    public Habitacion(int numHabitacion) 
+    public Habitacion(int numHabitacion, boolean win) 
     {
         numeroHabitacion = numHabitacion;
+        winRoom = win;
     }
     
     public final int obtenerNumero()
