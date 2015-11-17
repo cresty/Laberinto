@@ -37,6 +37,11 @@ public class Robot {
         llave++;
     }
     
+    public void substractKey()
+    {
+        llave--;
+    }
+    
     public void Humor()
     {
         comportamiento.respuesta();

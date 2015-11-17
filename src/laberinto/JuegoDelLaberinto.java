@@ -56,7 +56,7 @@ public class JuegoDelLaberinto {
         unLaberinto.anadirHabitacion(h7);
         unLaberinto.anadirHabitacion(h8);
         unLaberinto.anadirHabitacion(h9);
-        Puerta puerta12 = fabricarPuerta(h1, h2, true);
+        Puerta puerta12 = fabricarPuerta(h1, h2, false);
         Puerta puerta25 = fabricarPuerta(h2, h5, true);
         Puerta puerta36 = fabricarPuerta(h3, h6, true);
         Puerta puerta56 = fabricarPuerta(h5, h6, true);

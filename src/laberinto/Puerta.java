@@ -32,7 +32,19 @@ public class Puerta implements LugarDelMapa {
             robot.changeRoom(habitacion2);
         }
         else
-            System.out.println("La puerta esta cerrada.");
+        {
+            if (robot.llave == 0)
+                System.out.println("La puerta esta cerrada. No tienes llaves");
+            else
+            {
+                System.out.println("Has abierto la puerta");
+                robot.substractKey();
+                this.estaAbierta = true;
+                Entrar(robot);
+            }
+            
+            
+        }
     }
     
 }
