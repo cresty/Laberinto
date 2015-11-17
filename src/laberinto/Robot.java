@@ -15,8 +15,8 @@ public class Robot {
     Behaviour comportamiento;
     Habitacion room;
     String nombre;
-    int hp=10;
     final int hpmax=10;
+    int hp=hpmax;
     int llave=0;
     
     public Robot(){}
