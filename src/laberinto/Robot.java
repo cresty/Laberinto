@@ -98,8 +98,21 @@ public class Robot {
         hp--;
     }
     
+    public boolean winStatus()
+    {
+        if (this.room.winRoom)
+        {
+            this.comportamiento = new WinBehaviour();
+            System.out.println("El robot "+nombre+" HA GANADO!!!");
+            return true;
+        }
+        else
+            return false;
+    }
+    
     public void mover()
     {
+        
         updateStatus();
         Comportamiento();
             showHP();

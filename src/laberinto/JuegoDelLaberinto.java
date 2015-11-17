@@ -57,13 +57,21 @@ public class JuegoDelLaberinto {
         unLaberinto.anadirHabitacion(h8);
         unLaberinto.anadirHabitacion(h9);
         Puerta puerta12 = fabricarPuerta(h1, h2, true);
+        Puerta puerta21 = fabricarPuerta(h2, h1, true);
         Puerta puerta25 = fabricarPuerta(h2, h5, true);
+        Puerta puerta52 = fabricarPuerta(h5, h2, true);
         Puerta puerta36 = fabricarPuerta(h3, h6, true);
+        Puerta puerta63 = fabricarPuerta(h6, h3, true);
         Puerta puerta56 = fabricarPuerta(h5, h6, true);
+        Puerta puerta65 = fabricarPuerta(h6, h5, true);
         Puerta puerta58 = fabricarPuerta(h5, h8, true);
+        Puerta puerta85 = fabricarPuerta(h8, h5, true);
         Puerta puerta78 = fabricarPuerta(h7, h8, true);
+        Puerta puerta87 = fabricarPuerta(h8, h7, true);
         Puerta puerta74 = fabricarPuerta(h7, h4, false);
+        Puerta puerta47 = fabricarPuerta(h4, h7, false);
         Puerta puerta89 = fabricarPuerta(h8, h9, true);
+        Puerta puerta98 = fabricarPuerta(h9, h8, true);
         
         h1.establecerLado(Direccion.NORTE, fabricarPared(false));
         h1.establecerLado(Direccion.SUR, fabricarPared(false));
@@ -73,27 +81,27 @@ public class JuegoDelLaberinto {
         h2.establecerLado(Direccion.NORTE, puerta25);
         h2.establecerLado(Direccion.SUR, fabricarTrampa());
         h2.establecerLado(Direccion.ESTE, fabricarPared(false));
-        h2.establecerLado(Direccion.OESTE, puerta12);
+        h2.establecerLado(Direccion.OESTE, puerta21);
         
         h3.establecerLado(Direccion.NORTE, puerta36);
         h3.establecerLado(Direccion.SUR, fabricarPared(true));
         h3.establecerLado(Direccion.ESTE, fabricarTrampa());
         h3.establecerLado(Direccion.OESTE, fabricarPared(false));
         
-        h4.establecerLado(Direccion.NORTE, puerta74);
+        h4.establecerLado(Direccion.NORTE, puerta47);
         h4.establecerLado(Direccion.SUR, fabricarPared(false));
         h4.establecerLado(Direccion.ESTE, fabricarPared(false));
         h4.establecerLado(Direccion.OESTE, fabricarPared(false));
 
         h5.establecerLado(Direccion.NORTE, puerta58);
-        h5.establecerLado(Direccion.SUR, puerta25);
+        h5.establecerLado(Direccion.SUR, puerta52);
         h5.establecerLado(Direccion.ESTE, puerta56);
         h5.establecerLado(Direccion.OESTE, fabricarTrampa());
         
         h6.establecerLado(Direccion.NORTE, fabricarTrampa());
-        h6.establecerLado(Direccion.SUR, puerta36);
+        h6.establecerLado(Direccion.SUR, puerta63);
         h6.establecerLado(Direccion.ESTE, fabricarPared(false));
-        h6.establecerLado(Direccion.OESTE, puerta56);
+        h6.establecerLado(Direccion.OESTE, puerta65);
         
         h7.establecerLado(Direccion.NORTE, fabricarPared(false));
         h7.establecerLado(Direccion.SUR, puerta74);
@@ -101,14 +109,14 @@ public class JuegoDelLaberinto {
         h7.establecerLado(Direccion.OESTE, fabricarTrampa());
         
         h8.establecerLado(Direccion.NORTE, fabricarTrampa());
-        h8.establecerLado(Direccion.SUR, puerta58);
+        h8.establecerLado(Direccion.SUR, puerta85);
         h8.establecerLado(Direccion.ESTE, puerta89);
-        h8.establecerLado(Direccion.OESTE, puerta78);
+        h8.establecerLado(Direccion.OESTE, puerta87);
         
         h9.establecerLado(Direccion.NORTE, fabricarPared(false));
         h9.establecerLado(Direccion.SUR, fabricarPared(false));
         h9.establecerLado(Direccion.ESTE, fabricarPared(false));
-        h9.establecerLado(Direccion.OESTE,puerta89);
+        h9.establecerLado(Direccion.OESTE,puerta98);
         
         return unLaberinto;
     }

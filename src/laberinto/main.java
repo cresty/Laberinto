@@ -16,20 +16,31 @@ public class main {
         Laberinto lab = main.crearLaberinto1();
         Robot r1 = new Robot("cresty", lab.getInicial() );
         Robot r2 = new Robot("DarKWolF", lab.getInicial());
-        while(true)
+        boolean win = false;
+        while(!win)
         {
-            if (r1.comportamiento.getClass() != laberinto.DeadBehaviour.class)
-                System.out.println("Turno de: "+r1.nombre);
-            r1.Comportamiento();
-            for (int i=0;i<r1.comportamiento.getTurnos();i++)
-                r1.mover();
-            if (r2.comportamiento.getClass() != laberinto.DeadBehaviour.class)
-                System.out.println("Turno de: "+r2.nombre);
-            r2.Comportamiento();
-            for (int i=0;i<r2.comportamiento.getTurnos();i++)
-                r2.mover();
+            if (!win)
+            {
+                if ((r1.comportamiento.getClass() != laberinto.DeadBehaviour.class))
+                    System.out.println("Turno de: "+r1.nombre);
+                r1.Comportamiento();
+                for (int i=0;i<r1.comportamiento.getTurnos();i++)
+                {
+                    r1.mover();
+                    win = r1.winStatus();
+                }
+            }
+            if (!win)
+            {
+                if (r2.comportamiento.getClass() != laberinto.DeadBehaviour.class)
+                    System.out.println("Turno de: "+r2.nombre);
+                r2.Comportamiento();
+                for (int i=0;i<r2.comportamiento.getTurnos();i++)
+                {
+                    r2.mover();
+                    win = r2.winStatus();
+                }
+            }
         }
-    
     }
-    
 }
