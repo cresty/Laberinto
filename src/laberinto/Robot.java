@@ -32,6 +32,11 @@ public class Robot {
         comportamiento.mode();
     }
     
+    public void addKey()
+    {
+        llave++;
+    }
+    
     public void Humor()
     {
         comportamiento.respuesta();
