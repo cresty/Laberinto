@@ -19,10 +19,6 @@ public class Puerta implements LugarDelMapa {
         habitacion2 = hab2;
         estaAbierta = abierta;
     }
-//    public final Habitacion otroLadoDe(Habitacion habitacion)
-//    {
-//        return habitacion2;
-//    }
     @Override
     public void Entrar(Robot robot) 
     {
@@ -42,8 +38,6 @@ public class Puerta implements LugarDelMapa {
                 this.estaAbierta = true;
                 Entrar(robot);
             }
-            
-            
         }
     }
     

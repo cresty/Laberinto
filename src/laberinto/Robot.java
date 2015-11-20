@@ -51,6 +51,7 @@ public class Robot {
     public void changeRoom(Habitacion hab)
     {
         room = hab;
+        room.Entrar(this);
     }
     
     public Habitacion getRoom()
@@ -80,17 +81,12 @@ public class Robot {
     
     public void updateStatus()
     {
-        //showHP();
+        if (comportamiento.getClass() == laberinto.WinBehaviour.class)
+            return;
         if (hp <= hpmax/2 &&  hp >=1)
-        {
             comportamiento = new HurtBehaviour();
-            //System.out.println("CUIDADO "+nombre+" esta herido!!");
-        }
         if (hp<1)
-        {
             comportamiento = new DeadBehaviour();
-            //System.out.println(nombre+" Ha Muerto.");
-        }
     }
     
     public void getHit()
@@ -100,9 +96,9 @@ public class Robot {
     
     public boolean winStatus()
     {
-        if (this.room.winRoom)
+        if (comportamiento.getClass() == laberinto.WinBehaviour.class)
         {
-            this.comportamiento = new WinBehaviour();
+            //this.comportamiento = new WinBehaviour();
             System.out.println("El robot "+nombre+" HA GANADO!!!");
             return true;
         }
@@ -114,7 +110,7 @@ public class Robot {
     {
         
         updateStatus();
-        Comportamiento();
+        //Comportamiento();
             showHP();
             System.out.println("");
             showRoom();
@@ -132,7 +128,7 @@ public class Robot {
                 LugarDelMapa lado = room.obtenerLado(a);
                 lado.Entrar(this);
                 updateStatus();
-                Comportamiento();
+                //Comportamiento();
             }
             if (hp == 0)
                 showHP();

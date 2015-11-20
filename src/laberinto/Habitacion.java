@@ -11,13 +11,13 @@ package laberinto;
 public class Habitacion implements LugarDelMapa 
 {
     public static final int NUMLADOS = 4;
-    private int numeroHabitacion;
-    boolean winRoom;
-    private final LugarDelMapa lados[] = new LugarDelMapa[NUMLADOS];
-    public Habitacion(int numHabitacion, boolean win) 
+    int numeroHabitacion;
+    //boolean winRoom;
+    LugarDelMapa lados[] = new LugarDelMapa[NUMLADOS];
+    public Habitacion(int numHabitacion) 
     {
         numeroHabitacion = numHabitacion;
-        winRoom = win;
+        //winRoom = win;
     }
     
     public final int obtenerNumero()
@@ -25,11 +25,11 @@ public class Habitacion implements LugarDelMapa
         return numeroHabitacion;
     }
     
-    public final LugarDelMapa obtenerLado(int a)
+    public LugarDelMapa obtenerLado(int a)
     {
-        //int a = obtenerDireccion(direccion);
         return lados[a];
     }
+    
     public final void establecerLado(Direccion direccion, LugarDelMapa lugarDelMapa) 
     {
         int a = obtenerDireccion(direccion);
@@ -53,7 +53,7 @@ public class Habitacion implements LugarDelMapa
     @Override
     public void Entrar(Robot robot) 
     {
-        System.out.println("Estas en la Habitacion "+numeroHabitacion);
+        //System.out.println("Estas en la Habitacion "+numeroHabitacion);
     }
     
     

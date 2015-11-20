@@ -10,9 +10,14 @@ package laberinto;
  */
 public class JuegoDelLaberinto {
     
-    public Habitacion fabricarHabitacion(int n, boolean win) 
+    public Habitacion fabricarHabitacion(int n) 
     {
-        return new Habitacion(n, win);
+        return new Habitacion(n);
+    }
+    
+    public Habitacion fabricarHabitacionWin(int n) 
+    {
+        return new HabitacionWin(n);
     }
     
     public Pared fabricarPared(int key)
@@ -43,15 +48,15 @@ public class JuegoDelLaberinto {
     public final Laberinto crearLaberinto1() 
     {
         Laberinto unLaberinto = fabricarLaberinto();
-        Habitacion h1 = fabricarHabitacion(1,false);
-        Habitacion h2 = fabricarHabitacion(2,false);
-        Habitacion h3 = fabricarHabitacion(3,false);
-        Habitacion h4 = fabricarHabitacion(4,true);
-        Habitacion h5 = fabricarHabitacion(5,false);
-        Habitacion h6 = fabricarHabitacion(6,false);
-        Habitacion h7 = fabricarHabitacion(7,false);
-        Habitacion h8 = fabricarHabitacion(8,false);
-        Habitacion h9 = fabricarHabitacion(9,false);
+        Habitacion h1 = fabricarHabitacion(1);
+        Habitacion h2 = fabricarHabitacion(2);
+        Habitacion h3 = fabricarHabitacion(3);      
+        Habitacion h4 = fabricarHabitacionWin(4);
+        Habitacion h5 = fabricarHabitacion(5);
+        Habitacion h6 = fabricarHabitacion(6);
+        Habitacion h7 = fabricarHabitacion(7);
+        Habitacion h8 = fabricarHabitacion(8);
+        Habitacion h9 = fabricarHabitacion(9);
         unLaberinto.anadirHabitacion(h1);
         unLaberinto.anadirHabitacion(h2);
         unLaberinto.anadirHabitacion(h3);
@@ -74,7 +79,7 @@ public class JuegoDelLaberinto {
         Puerta puerta78 = fabricarPuerta(h7, h8, true);
         Puerta puerta87 = fabricarPuerta(h8, h7, true);
         Puerta puerta74 = fabricarPuerta(h7, h4, false);
-        Puerta puerta47 = fabricarPuerta(h4, h7, false);
+        Puerta puerta47 = fabricarPuerta(h4, h7, true);
         Puerta puerta89 = fabricarPuerta(h8, h9, true);
         Puerta puerta98 = fabricarPuerta(h9, h8, true);
         
