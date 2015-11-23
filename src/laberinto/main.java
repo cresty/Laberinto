@@ -13,7 +13,7 @@ public class main {
     public static void main(String[] args) {
         
         JuegoDelLaberinto main = new JuegoDelLaberinto();
-        Laberinto lab = main.crearLaberinto1();
+        Laberinto lab = main.crearLaberintoAbiertoCerrado();
         Robot r1 = new Robot("cresty", lab.getInicial() );
         Robot r2 = new Robot("DarKWolF", lab.getInicial());
         boolean win = false;
