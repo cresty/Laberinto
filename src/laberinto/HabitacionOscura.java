@@ -20,6 +20,7 @@ public class HabitacionOscura extends Habitacion{
         return lados[randomNum];
     }
     
+    @Override
     public void Entrar(Robot robot)
     {
         System.out.println("Estas en una Habitacion Oscura!!! No ves hacia donde te diriges!!!!");

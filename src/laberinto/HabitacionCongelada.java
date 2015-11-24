@@ -13,23 +13,23 @@ import static laberinto.Habitacion.NUMLADOS;
  */
 public class HabitacionCongelada extends Habitacion{
 
-    public HabitacionCongelada(int numHabitacion, LugarDelMapa pasaje1) {
-        super(numHabitacion);
-        pasaje = pasaje1;
-    }
+    int lado;
     
-    LugarDelMapa pasaje;
+    public HabitacionCongelada(int numHabitacion, int l) {
+        super(numHabitacion);
+        lado = l;
+    }
     
     public LugarDelMapa obtenerLado()
     {
-        //int randomNum = (int)(Math.random() * 4);
-        return pasaje;
+        return lados[lado];
     }
     
     @Override
     public void Entrar(Robot robot) 
     {
         System.out.println("Estas en una Habitacion Congelada!!! Te Resbalas!!!!");
-        lados[0].Entrar(robot);
+        lados[lado].Entrar(robot);
+        
     }
 }

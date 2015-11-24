@@ -74,11 +74,6 @@ public class Robot {
             System.out.println(nombre+" Ha Muerto.");
     }
     
-    public void showStatus()
-    {
-        
-    }
-    
     public void updateStatus()
     {
         if (comportamiento.getClass() == laberinto.WinBehaviour.class)
@@ -98,7 +93,6 @@ public class Robot {
     {
         if (comportamiento.getClass() == laberinto.WinBehaviour.class)
         {
-            //this.comportamiento = new WinBehaviour();
             System.out.println("El robot "+nombre+" HA GANADO!!!");
             return true;
         }

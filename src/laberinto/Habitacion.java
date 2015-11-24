@@ -12,12 +12,10 @@ public class Habitacion implements LugarDelMapa
 {
     public static final int NUMLADOS = 4;
     int numeroHabitacion;
-    //boolean winRoom;
     LugarDelMapa lados[] = new LugarDelMapa[NUMLADOS];
     public Habitacion(int numHabitacion) 
     {
         numeroHabitacion = numHabitacion;
-        //winRoom = win;
     }
     
     public final int obtenerNumero()
@@ -36,7 +34,7 @@ public class Habitacion implements LugarDelMapa
         lados[a] = lugarDelMapa;
     }
     
-    public final int obtenerDireccion(Direccion dir)
+    public int obtenerDireccion(Direccion dir)
     {
         switch(dir)
         {
@@ -53,7 +51,7 @@ public class Habitacion implements LugarDelMapa
     @Override
     public void Entrar(Robot robot) 
     {
-        //System.out.println("Estas en la Habitacion "+numeroHabitacion);
+        System.out.println("Habitacion normalucha");
     }
     
     
