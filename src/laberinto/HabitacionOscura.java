@@ -13,10 +13,10 @@ public class HabitacionOscura extends Habitacion{
     public HabitacionOscura(int numHabitacion) {
         super(numHabitacion);
     }
-    
-    public LugarDelMapa obtenerLado()
+    @Override
+    public LugarDelMapa obtenerLado(int randomNum)
     {
-        int randomNum = (int)(Math.random() * 4);
+        randomNum = (int)(Math.random() * 4);
         return lados[randomNum];
     }
     

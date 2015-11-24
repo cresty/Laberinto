@@ -27,7 +27,7 @@ public class JuegoDelLaberinto {
     
     public Habitacion fabricarHabitacionOscura(int n) 
     {
-        return new HabitacionWin(n);
+        return new HabitacionOscura(n);
     }
     
     public Habitacion fabricarHabitacionEspejo(int n) 
@@ -205,7 +205,7 @@ public class JuegoDelLaberinto {
         h3.establecerLado(Direccion.OESTE, puerta32);
         
         h4.establecerLado(Direccion.NORTE, puerta48);
-        h4.establecerLado(Direccion.SUR, fabricarPared());
+        h4.establecerLado(Direccion.SUR, fabricarParedConLlave());
         h4.establecerLado(Direccion.ESTE, puerta41);
         h4.establecerLado(Direccion.OESTE, puerta43);
         
