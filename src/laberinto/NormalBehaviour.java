@@ -4,8 +4,6 @@
  */
 package laberinto;
 
-import javax.swing.ImageIcon;
-
 /**
  *
  * @author cresty

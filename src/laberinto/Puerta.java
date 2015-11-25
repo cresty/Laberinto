@@ -9,14 +9,12 @@ package laberinto;
  * @author cresty
  */
 public class Puerta implements LugarDelMapa {
-    private Habitacion habitacion1;
-    private Habitacion habitacion2;
+    private Habitacion habitacion;
     private boolean estaAbierta;
     
-    public Puerta(Habitacion hab1, Habitacion hab2, boolean abierta)
+    public Puerta(Habitacion hab, boolean abierta)
     {
-        habitacion1 = hab1;
-        habitacion2 = hab2;
+        habitacion = hab;
         estaAbierta = abierta;
     }
     @Override
@@ -24,8 +22,8 @@ public class Puerta implements LugarDelMapa {
     {
         if (estaAbierta)
         {
-            System.out.println("El robot "+robot.nombre+" ha pasado de la habitacion "+habitacion1.obtenerNumero()+" a la habitacion "+habitacion2.obtenerNumero());
-            robot.changeRoom(habitacion2);
+            System.out.println("El robot "+robot.nombre+" ha pasado de la habitacion "+robot.room.obtenerNumero()+" a la habitacion "+habitacion.obtenerNumero());
+            robot.changeRoom(habitacion);
         }
         else
         {

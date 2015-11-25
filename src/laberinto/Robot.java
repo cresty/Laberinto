@@ -68,6 +68,10 @@ public class Robot {
     {
         System.out.println("El robot "+nombre+" tiene "+hp+" puntos de vida");
         System.out.println("");
+    }
+    
+    public void showStatus()
+    {
         if (comportamiento.getClass() == laberinto.HurtBehaviour.class)
             System.out.println("CUIDADO "+nombre+" esta herido!!");
         if (comportamiento.getClass() == laberinto.DeadBehaviour.class)
@@ -104,7 +108,6 @@ public class Robot {
     {
         
         updateStatus();
-        //Comportamiento();
             showHP();
             System.out.println("");
             showRoom();
@@ -122,7 +125,7 @@ public class Robot {
                 LugarDelMapa lado = room.obtenerLado(a);
                 lado.Entrar(this);
                 updateStatus();
-                //Comportamiento();
+                showStatus();
             }
             if (hp == 0)
                 showHP();

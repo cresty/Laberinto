@@ -18,8 +18,8 @@ public class main {
         Robot r1 = new Robot("cresty", lab.getInicial() );
         Robot r2 = new Robot("DarKWolF", lab.getInicial());
         Robot r3 = new Robot("Earendur", fun.getInicial());
-        boolean win = true;
-        boolean win2 = false;
+        boolean win = false;
+        boolean win2 = true;
         while(!win)
         {
             if (!win)

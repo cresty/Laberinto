@@ -4,8 +4,6 @@
  */
 package laberinto;
 
-
-
 /**
  *
  * @author cresty

@@ -5,7 +5,6 @@
  */
 package laberinto;
 
-import static laberinto.Habitacion.NUMLADOS;
 
 /**
  *
