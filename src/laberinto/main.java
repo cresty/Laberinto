@@ -52,11 +52,8 @@ public class main {
                 if ((r3.comportamiento.getClass() != laberinto.DeadBehaviour.class))
                     System.out.println("Turno de: "+r3.nombre);
                 r3.Comportamiento();
-                for (int i=0;i<r3.comportamiento.getTurnos();i++)
-                {
-                    r3.mover();
-                    win2 = r3.winStatus();
-                }
+                r3.mover();
+                win2 = r3.winStatus();
             }
         }
     }
